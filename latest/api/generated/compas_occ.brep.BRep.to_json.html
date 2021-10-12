@@ -23,7 +23,7 @@
   
 
   
-    <link rel="prev" title="BRep.is_surface" href="compas_occ.brep.BRep.is_surface.html" />
+    <link rel="prev" title="BRep.make_solid" href="compas_occ.brep.BRep.make_solid.html" />
   
 
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -50,7 +50,7 @@
         <li class="nav-item nav-versions dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            0.1.0
+            0.2.1
           </a>
           <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
         </li>
@@ -101,7 +101,7 @@
 <h1>BRep.to_json</h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="compas_occ.brep.BRep.to_json">
-<span class="sig-prename descclassname"><span class="pre">BRep.</span></span><span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/compas-dev/compas_occ/blob/main/src/compas_occ/brep/brep.py#L318"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">BRep.</span></span><span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/compas-dev/compas_occ/blob/main/src/compas_occ/brep/brep.py#L317"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Export the BRep to a JSON file.</p>
 </dd></dl>
 
@@ -125,13 +125,14 @@
           <div id="compas-navigation" class="collapse compas-navigation">
           <ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="../../index.html">Introduction</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../../gettingstarted.html">Getting Started</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../../examples.html">Examples</a></li>
 <li class="nav-item active"><a class="nav-link reference internal" href="../../api.html">API Reference</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="../compas_occ.html">compas_occ</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="../compas_occ.brep.html">compas_occ.brep</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.conversions.html">compas_occ.conversions</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.geometry.html">compas_occ.geometry</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.interop.html">compas_occ.interop</a></li>
 </ul>
 </li>
 </ul>
@@ -159,11 +160,11 @@
   <footer class="compas-footer">
     <nav class="nav p-2">
       
-        <a href="compas_occ.brep.BRep.is_surface.html" title="BRep.is_surface" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
+        <a href="compas_occ.brep.BRep.make_solid.html" title="BRep.make_solid" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
           <div class="nav-button p-2 m-2"><i class="fas fa-arrow-left"></i></div>
           <div class="nav-title flex-grow-1 align-self-center">
             <div class="nav-direction small font-weight-light">Previous</div>
-            BRep.is_surface
+            BRep.make_solid
           </div>
         </a>
       
@@ -215,7 +216,7 @@
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
   URL_ROOT          : '',
-  VERSION           : '0.1.0',
+  VERSION           : '0.2.1',
   COLLAPSE_INDEX    : false,
   FILE_SUFFIX       : '.html',
   HAS_SOURCE        : 'false',
@@ -246,10 +247,6 @@
     hljs.initHighlighting();
     anchors.add();
 
-    $('.nav-versions .dropdown-item').filter(function(i, ver) {
-      return window.location.href.startsWith(ver.href);
-    }).addClass("active");
-
   });
 
 
@@ -262,6 +259,13 @@
       lines.forEach(version => {
         $("#doc_version_list").append("<a class=\"dropdown-item\" href=\""+ docs_site + version + "\">" + version + "</a>");
       });
+
+      var selected_version = $('.nav-versions .dropdown-item').filter(function(i, ver) {
+        return window.location.href.startsWith(ver.href);
+      });
+      selected_version.addClass('active');
+      $("#bd-versions").text(selected_version.text());
+
     })
   }
   </script>

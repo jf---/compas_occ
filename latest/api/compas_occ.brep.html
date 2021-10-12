@@ -50,7 +50,7 @@
         <li class="nav-item nav-versions dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            0.1.0
+            0.2.1
           </a>
           <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
         </li>
@@ -121,17 +121,6 @@
 </tbody>
 </table>
 </section>
-<section id="functions">
-<h2>Functions</h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-</tbody>
-</table>
-</section>
 </section>
 
         
@@ -152,13 +141,14 @@
           <div id="compas-navigation" class="collapse compas-navigation">
           <ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="../index.html">Introduction</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../examples.html">Examples</a></li>
 <li class="nav-item active"><a class="nav-link reference internal" href="../api.html">API Reference</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="compas_occ.html">compas_occ</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link active current reference internal" href="#">compas_occ.brep</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_occ.conversions.html">compas_occ.conversions</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="compas_occ.geometry.html">compas_occ.geometry</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="compas_occ.interop.html">compas_occ.interop</a></li>
 </ul>
 </li>
 </ul>
@@ -176,7 +166,6 @@
         <ul class="nav flex-column" id="compas-toc">
 <li class="nav-item"><a class="nav-link reference internal" href="#">compas_occ.brep</a><ul class="nav flex-column">
 <li class="nav-item"><a class="nav-link reference internal" href="#classes">Classes</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +235,7 @@
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
   URL_ROOT          : '',
-  VERSION           : '0.1.0',
+  VERSION           : '0.2.1',
   COLLAPSE_INDEX    : false,
   FILE_SUFFIX       : '.html',
   HAS_SOURCE        : 'false',
@@ -277,10 +266,6 @@
     hljs.initHighlighting();
     anchors.add();
 
-    $('.nav-versions .dropdown-item').filter(function(i, ver) {
-      return window.location.href.startsWith(ver.href);
-    }).addClass("active");
-
   });
 
 
@@ -293,6 +278,13 @@
       lines.forEach(version => {
         $("#doc_version_list").append("<a class=\"dropdown-item\" href=\""+ docs_site + version + "\">" + version + "</a>");
       });
+
+      var selected_version = $('.nav-versions .dropdown-item').filter(function(i, ver) {
+        return window.location.href.startsWith(ver.href);
+      });
+      selected_version.addClass('active');
+      $("#bd-versions").text(selected_version.text());
+
     })
   }
   </script>

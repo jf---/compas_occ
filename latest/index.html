@@ -19,7 +19,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/compas-reference.css" />
 
   
-    <link rel="next" title="Getting Started" href="gettingstarted.html" />
+    <link rel="next" title="Installation" href="installation.html" />
   
 
   
@@ -48,7 +48,7 @@
         <li class="nav-item nav-versions dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            0.1.0
+            0.2.1
           </a>
           <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
         </li>
@@ -89,25 +89,47 @@
         
         <section id="compas-occ">
 <h1>COMPAS OCC</h1>
+<figure class="figure align-default">
+<img alt="_images/compas_occ.png" class="figure-img img-fluid" src="_images/compas_occ.png" />
+</figure>
 <p class="lead">COMPAS OCC provides an easy-to-use interface to the Python bindings
-of the 3D modelling kernel of Open CasCade.</p>
+of the <a class="reference external" href="https://www.opencascade.com/open-cascade-technology/">3D modelling kernel of Open CasCade</a>.</p>
 <section id="table-of-contents">
 <h2>Table of Contents</h2>
 <div class="toctree-wrapper compound">
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/brep_from_boolean_difference.html">BRep Shape from Boolean Difference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/brep_from_booleans.html">BRep Shape from Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/surface_points_on_uv.html">Surface Points along UV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/brep_from_booleans.html">BRep Shape From Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/brep_from_corners.html">BRep From Corners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/brep_from_mesh.html">BRep From Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_comparison1.html">Curve Comparison 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_comparison2.html">Curve Comparison 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_from_circle.html">Curve From Circle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_from_interpolation.html">Curve From Interpolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_from_line.html">Curve From Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_from_parameters.html">Curve From Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/curve_from_points.html">Curve From Control Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_aabb.html">Surface Axis-Aligned Bounding Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_frames.html">Surface Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_from_meshgrid.html">Surface From Meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_from_parameters.html">Surface From Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_from_points.html">Surface From Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_intersections_with_line.html">Surface Intersections With Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_isocurves.html">Surface Isocurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_jsondata.html">Surface JSON Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_random.html">Surface With Random Control Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_spacepoints.html">Surface Points Over UV Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/surface_viewobject.html">Surface Visualisation With View Object</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/compas_occ.html">compas_occ</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/compas_occ.brep.html">compas_occ.brep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/compas_occ.conversions.html">compas_occ.conversions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/compas_occ.geometry.html">compas_occ.geometry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/compas_occ.interop.html">compas_occ.interop</a></li>
 </ul>
 </li>
 </ul>
@@ -143,7 +165,8 @@ of the 3D modelling kernel of Open CasCade.</p>
           <div id="compas-navigation" class="collapse compas-navigation">
           <ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link active current reference internal" href="#">Introduction</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="examples.html">Examples</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="api.html">API Reference</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="license.html">License</a></li>
@@ -175,10 +198,10 @@ of the 3D modelling kernel of Open CasCade.</p>
       
 
       
-        <a href="gettingstarted.html" title="Getting Started" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
+        <a href="installation.html" title="Installation" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
           <div class="nav-title footer-link flex-grow-1 align-self-center">
             <div class="nav-direction small font-weight-light">Next</div>
-            Getting Started
+            Installation
           </div>
           <div class="nav-button p-2 m-2"><i class="fas fa-arrow-right"></i></div>
         </a>
@@ -221,7 +244,7 @@ of the 3D modelling kernel of Open CasCade.</p>
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
   URL_ROOT          : '',
-  VERSION           : '0.1.0',
+  VERSION           : '0.2.1',
   COLLAPSE_INDEX    : false,
   FILE_SUFFIX       : '.html',
   HAS_SOURCE        : 'false',
@@ -252,10 +275,6 @@ of the 3D modelling kernel of Open CasCade.</p>
     hljs.initHighlighting();
     anchors.add();
 
-    $('.nav-versions .dropdown-item').filter(function(i, ver) {
-      return window.location.href.startsWith(ver.href);
-    }).addClass("active");
-
   });
 
 
@@ -268,6 +287,13 @@ of the 3D modelling kernel of Open CasCade.</p>
       lines.forEach(version => {
         $("#doc_version_list").append("<a class=\"dropdown-item\" href=\""+ docs_site + version + "\">" + version + "</a>");
       });
+
+      var selected_version = $('.nav-versions .dropdown-item').filter(function(i, ver) {
+        return window.location.href.startsWith(ver.href);
+      });
+      selected_version.addClass('active');
+      $("#bd-versions").text(selected_version.text());
+
     })
   }
   </script>

@@ -19,11 +19,11 @@
   <link rel="stylesheet" type="text/css" href="../_static/css/compas-reference.css" />
 
   
-    <link rel="next" title="BSplineCurve" href="generated/compas_occ.geometry.BSplineCurve.html" />
+    <link rel="next" title="Curve" href="generated/compas_occ.geometry.Curve.html" />
   
 
   
-    <link rel="prev" title="BRepFace" href="generated/compas_occ.brep.BRepFace.html" />
+    <link rel="prev" title="triangle_to_face" href="generated/compas_occ.conversions.triangle_to_face.html" />
   
 
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -50,7 +50,7 @@
         <li class="nav-item nav-versions dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            0.1.0
+            0.2.1
           </a>
           <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
         </li>
@@ -95,31 +95,37 @@
         
         <span class="target" id="module-compas_occ.geometry"></span><section id="compas-occ-geometry">
 <h1>compas_occ.geometry</h1>
-<section id="classes">
-<h2>Classes</h2>
+<section id="curves">
+<h2>Curves</h2>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/compas_occ.geometry.BSplineCurve.html#compas_occ.geometry.BSplineCurve" title="compas_occ.geometry.BSplineCurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BSplineCurve</span></code></a></p></td>
-<td><p>Wrapper for OCC BSplineCurve.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/compas_occ.geometry.Curve.html#compas_occ.geometry.Curve" title="compas_occ.geometry.Curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Curve</span></code></a></p></td>
+<td><p>Base class for all curves in this package.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/compas_occ.geometry.BSplineSurface.html#compas_occ.geometry.BSplineSurface" title="compas_occ.geometry.BSplineSurface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BSplineSurface</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/compas_occ.geometry.NurbsCurve.html#compas_occ.geometry.NurbsCurve" title="compas_occ.geometry.NurbsCurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NurbsCurve</span></code></a></p></td>
+<td><p>Class representing a NURBS curve based on the BSplineCurve of the OCC geometry kernel.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="functions">
-<h2>Functions</h2>
+<section id="surfaces">
+<h2>Surfaces</h2>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/compas_occ.geometry.Surface.html#compas_occ.geometry.Surface" title="compas_occ.geometry.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a></p></td>
+<td><p>Base class for all surfaces in this package.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/compas_occ.geometry.NurbsSurface.html#compas_occ.geometry.NurbsSurface" title="compas_occ.geometry.NurbsSurface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NurbsSurface</span></code></a></p></td>
+<td><p>Class representing a NURBS surface based on the BSplineSurface of the OCC geometry kernel.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -143,13 +149,14 @@
           <div id="compas-navigation" class="collapse compas-navigation">
           <ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="../index.html">Introduction</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../examples.html">Examples</a></li>
 <li class="nav-item active"><a class="nav-link reference internal" href="../api.html">API Reference</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="compas_occ.html">compas_occ</a><ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="compas_occ.brep.html">compas_occ.brep</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_occ.conversions.html">compas_occ.conversions</a></li>
 <li class="nav-item active"><a class="nav-link active current reference internal" href="#">compas_occ.geometry</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="compas_occ.interop.html">compas_occ.interop</a></li>
 </ul>
 </li>
 </ul>
@@ -166,8 +173,8 @@
         
         <ul class="nav flex-column" id="compas-toc">
 <li class="nav-item"><a class="nav-link reference internal" href="#">compas_occ.geometry</a><ul class="nav flex-column">
-<li class="nav-item"><a class="nav-link reference internal" href="#classes">Classes</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="#functions">Functions</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#curves">Curves</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#surfaces">Surfaces</a></li>
 </ul>
 </li>
 </ul>
@@ -181,20 +188,20 @@
   <footer class="compas-footer">
     <nav class="nav p-2">
       
-        <a href="generated/compas_occ.brep.BRepFace.html" title="BRepFace" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
+        <a href="generated/compas_occ.conversions.triangle_to_face.html" title="triangle_to_face" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
           <div class="nav-button p-2 m-2"><i class="fas fa-arrow-left"></i></div>
           <div class="nav-title flex-grow-1 align-self-center">
             <div class="nav-direction small font-weight-light">Previous</div>
-            BRepFace
+            triangle_to_face
           </div>
         </a>
       
 
       
-        <a href="generated/compas_occ.geometry.BSplineCurve.html" title="BSplineCurve" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
+        <a href="generated/compas_occ.geometry.Curve.html" title="Curve" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
           <div class="nav-title footer-link flex-grow-1 align-self-center">
             <div class="nav-direction small font-weight-light">Next</div>
-            BSplineCurve
+            Curve
           </div>
           <div class="nav-button p-2 m-2"><i class="fas fa-arrow-right"></i></div>
         </a>
@@ -237,7 +244,7 @@
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
   URL_ROOT          : '',
-  VERSION           : '0.1.0',
+  VERSION           : '0.2.1',
   COLLAPSE_INDEX    : false,
   FILE_SUFFIX       : '.html',
   HAS_SOURCE        : 'false',
@@ -268,10 +275,6 @@
     hljs.initHighlighting();
     anchors.add();
 
-    $('.nav-versions .dropdown-item').filter(function(i, ver) {
-      return window.location.href.startsWith(ver.href);
-    }).addClass("active");
-
   });
 
 
@@ -284,6 +287,13 @@
       lines.forEach(version => {
         $("#doc_version_list").append("<a class=\"dropdown-item\" href=\""+ docs_site + version + "\">" + version + "</a>");
       });
+
+      var selected_version = $('.nav-versions .dropdown-item').filter(function(i, ver) {
+        return window.location.href.startsWith(ver.href);
+      });
+      selected_version.addClass('active');
+      $("#bd-versions").text(selected_version.text());
+
     })
   }
   </script>

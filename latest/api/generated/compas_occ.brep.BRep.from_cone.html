@@ -50,7 +50,7 @@
         <li class="nav-item nav-versions dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            0.1.0
+            0.2.1
           </a>
           <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
         </li>
@@ -101,7 +101,7 @@
 <h1>BRep.from_cone</h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="compas_occ.brep.BRep.from_cone">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">BRep.</span></span><span class="sig-name descname"><span class="pre">from_cone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://compas.dev/compas/latest/api/generated/compas.geometry.Cone.html#compas.geometry.Cone" title="(in COMPAS v1.7)"><span class="pre">compas.geometry.shapes.cone.Cone</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="compas_occ.brep.BRep.html#compas_occ.brep.BRep" title="compas_occ.brep.brep.BRep"><span class="pre">compas_occ.brep.brep.BRep</span></a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">BRep.</span></span><span class="sig-name descname"><span class="pre">from_cone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://compas.dev/compas/latest/api/generated/compas.geometry.Cone.html#compas.geometry.Cone" title="(in COMPAS v1.7)"><span class="pre">compas.geometry.shapes.cone.Cone</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="compas_occ.brep.BRep.html#compas_occ.brep.BRep" title="compas_occ.brep.brep.BRep"><span class="pre">compas_occ.brep.brep.BRep</span></a></span></span></dt>
 <dd><p>Construct a BRep from a COMPAS cone.</p>
 </dd></dl>
 
@@ -125,13 +125,14 @@
           <div id="compas-navigation" class="collapse compas-navigation">
           <ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="../../index.html">Introduction</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../../gettingstarted.html">Getting Started</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../../examples.html">Examples</a></li>
 <li class="nav-item active"><a class="nav-link reference internal" href="../../api.html">API Reference</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="../compas_occ.html">compas_occ</a><ul class="nav flex-column active">
 <li class="nav-item active"><a class="nav-link reference internal" href="../compas_occ.brep.html">compas_occ.brep</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.conversions.html">compas_occ.conversions</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.geometry.html">compas_occ.geometry</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="../compas_occ.interop.html">compas_occ.interop</a></li>
 </ul>
 </li>
 </ul>
@@ -215,7 +216,7 @@
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
   URL_ROOT          : '',
-  VERSION           : '0.1.0',
+  VERSION           : '0.2.1',
   COLLAPSE_INDEX    : false,
   FILE_SUFFIX       : '.html',
   HAS_SOURCE        : 'false',
@@ -246,10 +247,6 @@
     hljs.initHighlighting();
     anchors.add();
 
-    $('.nav-versions .dropdown-item').filter(function(i, ver) {
-      return window.location.href.startsWith(ver.href);
-    }).addClass("active");
-
   });
 
 
@@ -262,6 +259,13 @@
       lines.forEach(version => {
         $("#doc_version_list").append("<a class=\"dropdown-item\" href=\""+ docs_site + version + "\">" + version + "</a>");
       });
+
+      var selected_version = $('.nav-versions .dropdown-item').filter(function(i, ver) {
+        return window.location.href.startsWith(ver.href);
+      });
+      selected_version.addClass('active');
+      $("#bd-versions").text(selected_version.text());
+
     })
   }
   </script>
